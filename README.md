@@ -6,13 +6,13 @@
 **本仓库为发行仓库**：提供 Docker 镜像部署文件与完整文档，不包含源代码。
 本项目不开源，保留所有权利，详见 [LICENSE](LICENSE)。问题反馈与需求建议请提 [Issues](../../issues)。
 
-## 当前版本：2.4.7
+## 当前版本：2.4.8
 
-本次更新修复原生 HomeKit 在 NAS 多网卡环境中的 zeroconf 组播资源耗尽：默认只监听默认路由接口，配置 `HK_ADDRESS` 时只监听指定接口；同时保留 2×1 卡片按设备类型展开信息的布局改进。
+本次更新修复首页湿度摘要、设备卡片键盘与读屏交互、主题文字对比度和手机端状态胶囊滚动体验；同时保留原生 HomeKit zeroconf 组播资源修复与 2×1 卡片按设备类型展开信息。
 
-详细变更与升级注意事项见 [更新日志](CHANGELOG.md#247--2026-10-04)。
+详细变更与升级注意事项见 [更新日志](CHANGELOG.md#248--2026-10-05)。
 
-发布镜像：`jeesa/tongtang:2.4.7`、`jeesa/tongtang-web:2.4.7`、`jeesa/tongtang-api:2.4.7`、`jeesa/tongtang-mt:2.4.7`，支持 `linux/amd64` 和 `linux/arm64`，`latest` 已同步更新。HomeKit 原生侧车复用 API 镜像。
+发布镜像：`jeesa/tongtang:2.4.8`、`jeesa/tongtang-web:2.4.8`、`jeesa/tongtang-api:2.4.8`、`jeesa/tongtang-mt:2.4.8`，支持 `linux/amd64` 和 `linux/arm64`，`latest` 已同步更新。HomeKit 原生侧车复用 API 镜像。
 
 已有部署保留数据卷及 APP_SECRET，使用原 compose 配置执行 `docker compose pull`、`docker compose up -d`；一体化部署为两条命令均加上 `-f docker-compose.allinone.yml`。静态侧车应一并更新，更新前建议备份数据卷。
 
