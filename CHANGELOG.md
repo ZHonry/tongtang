@@ -146,7 +146,7 @@
 
 ### 变更（旧名清理收尾）
 - **会话 Cookie 默认名 `qj_session` → `tongtang_session`**：初版名缩写的最后一个活跃残留。**升级后所有用户需重新登录一次**（旧名 Cookie 不再被读取，随 30 天有效期自然过期）；自定义过 `SESSION_COOKIE_NAME` 的部署不受影响
-- 名称清理收尾：package.json 包名 `ha-family-control` → `tongtang`（并补齐漏更的版本号）、测试临时目录前缀同步；NAS 侧已删除檐下时代的 `eaves-builder` 旧构建器、文件桥执行器在线改名 `tongtang-runner`。**尚余（择机与 dev 栈迁移一起做）**：`docker-compose.yml` 的 compose 项目名 `ha-family-control` 与数据卷名 `home_console_data`——改名=容器/网络/卷全部重建，存量自建部署会与老数据卷脱钩，须迁移方案配套
+- 名称清理收尾：package.json 包名 `ha-family-control` → `tongtang`（并补齐漏更的版本号）、测试临时目录前缀同步；NAS 侧已删除檐下时代的 `eaves-builder` 旧构建器。**尚余（择机与 dev 栈迁移一起做）**：`docker-compose.yml` 的 compose 项目名 `ha-family-control` 与数据卷名 `home_console_data`——改名=容器/网络/卷全部重建，存量自建部署会与老数据卷脱钩，须迁移方案配套
 
 ## 2.3.1 · 2026-07-29
 
