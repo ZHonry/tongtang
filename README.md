@@ -6,13 +6,13 @@
 **本仓库为发行仓库**：提供 Docker 镜像部署文件与完整文档，不包含源代码。
 本项目不开源，保留所有权利，详见 [LICENSE](LICENSE)。问题反馈与需求建议请提 [Issues](../../issues)。
 
-## 当前版本：2.4.10
+## 当前版本：2.4.11
 
-本次更新加入房间内可视化设备排序、HA 实时状态批量推送优化，以及新建用户复制已有成员基础配置。
+本次更新加入 Home Assistant 辅助实体、遥控/红外、语音卫星、空气质量、天气和位置追踪实体支持，并保留房间内可视化设备排序、HA 实时状态批量推送优化，以及新建用户复制已有成员基础配置。
 
-详细变更与升级注意事项见 [更新日志](CHANGELOG.md#2410--2026-10-11)。
+详细变更与升级注意事项见 [更新日志](CHANGELOG.md#2411--2026-10-11)。
 
-发布镜像：`jeesa/tongtang:2.4.10`、`jeesa/tongtang-web:2.4.10`、`jeesa/tongtang-api:2.4.10`、`jeesa/tongtang-mt:2.4.10`，支持 `linux/amd64` 和 `linux/arm64`，`latest` 已同步更新。HomeKit 原生侧车复用 API 镜像。
+发布镜像：`jeesa/tongtang:2.4.11`、`jeesa/tongtang-web:2.4.11`、`jeesa/tongtang-api:2.4.11`、`jeesa/tongtang-mt:2.4.11`，支持 `linux/amd64` 和 `linux/arm64`，`latest` 已同步更新。HomeKit 原生侧车复用 API 镜像。
 
 已有部署保留数据卷及 APP_SECRET，使用原 compose 配置执行 `docker compose pull`、`docker compose up -d`；一体化部署为两条命令均加上 `-f docker-compose.allinone.yml`。静态侧车应一并更新，更新前建议备份数据卷。
 
@@ -173,7 +173,9 @@ docker compose up -d
 
 ## 支持的实体域
 
-light · switch · climate · fan · cover · sensor · binary_sensor · camera · vacuum · media_player · lock · humidifier · valve · water_heater · alarm_control_panel · siren · lawn_mower · button · input_button · select · number · scene · automation · person · weather
+light · switch · input_boolean · climate · fan · cover · sensor · air_quality · binary_sensor · camera · vacuum · media_player · lock · humidifier · valve · water_heater · alarm_control_panel · siren · lawn_mower · button · input_button · input_number · input_select · input_text · input_datetime · select · number · remote · infrared · assist_satellite · weather · device_tracker · scene · automation · person
+
+暂不支持同步为设备卡的实体平台：`ai_task`、`conversation`、`calendar`、`notify`、`stt`、`tts`、`wake_word`、`todo`、`date`、`datetime`、`text`、`time`、`update`、`image_processing`、`geo_location`、`radio_frequency`。其中场景、自动化和人员已有独立功能入口；天气实体用于家庭天气摘要，也可在设备列表查看。
 
 ## 已知限制
 

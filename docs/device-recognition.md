@@ -8,6 +8,10 @@
 |---|---|---|
 | `light` | 灯 | 竖向亮度滑杆；`brightness`、`color_temp_kelvin`（`min/max_color_temp_kelvin`）、`rgb_color` |
 | `switch` / `input_boolean` | 开关 | HomeKit 式拨杆；`device_class: outlet` 显示为插座 |
+| `input_number` | 数值辅助 | 数值滑杆；`min`、`max`、`step` |
+| `input_select` | 选项辅助 | 段选或下拉；`options` |
+| `input_text` | 文本辅助 | 文本输入；使用 HA `input_text.set_value` |
+| `input_datetime` | 日期时间辅助 | 日期、时间或日期时间输入；使用 HA `input_datetime.set_datetime` |
 | `climate` | 空调/温控 | 温度±与模式圆钮；`hvac_modes`、`fan_modes`、`min_temp`、`max_temp`、`current_temperature` |
 | `fan` | 风扇/浴霸/新风 | 风速滑杆（有 `percentage` 时）或拨杆；`preset_modes`（模式段选）、`oscillating`（摇摆开关） |
 | `cover` | 窗帘/车库门/卷帘 | 有 `current_position` → 开度滑杆；无 → 开/关拨杆。`device_class: garage/door/gate/window/shutter` 归入「安全」分区 |
@@ -24,12 +28,17 @@
 | `button` / `input_button` | 一键操作 | 圆钮（浮窗「一键操作」区） |
 | `number` | 数值调节 | 滑杆；`min`、`max`、`step` |
 | `select` | 选项 | ≤6 个选项显示段选按钮，否则下拉；`options` |
+| `remote` / `infrared` | 遥控器 | 发送 HA 遥控指令；`commands` 可生成快捷指令按钮 |
+| `assist_satellite` | 语音卫星 | 显示卫星状态，可开始语音对话 |
+| `air_quality` | 空气质量 | 显示当前指数/状态及可用读数 |
+| `weather` | 天气 | 显示天气状态与温度 |
+| `device_tracker` | 位置追踪 | 显示在家/离家及可用位置属性 |
 | `siren` | 警报器 | 拨杆 |
 | `water_heater` | 热水器 | 拨杆 |
 | `event` | 事件 | 最近触发时间；`event_type` |
 | `image` | 图像 | 图片面板（扫地机地图、打印封面等） |
 
-不在上表中的域（如 `automation`、`script`、`person`、`update`）不会同步为设备卡；情景/自动化、人员在家走各自的专门功能。
+不在上表中的域（如 `ai_task`、`conversation`、`calendar`、`notify`、`stt`、`tts`、`wake_word`、`todo`、`update`）不会同步为设备卡；情景/自动化、人员在家走各自的专门功能。
 
 ## 二、组合设备（自动合并成一张卡）
 

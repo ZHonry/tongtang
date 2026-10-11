@@ -1,5 +1,13 @@
 # 更新日志
 
+## 2.4.11 · 2026-10-11
+
+### HA 实体支持
+- 接入 `input_boolean`、`input_number`、`input_select`、`input_text`、`input_datetime` 辅助实体，分别提供开关、数值滑块、选项、文本和日期时间控件。
+- 接入 `remote` / `infrared` 遥控实体，支持遥控指令发送；接入 `assist_satellite` 状态与开始语音对话操作。
+- 接入 `air_quality`、`weather`、`device_tracker` 只读实体，显示空气质量、天气和在家/离家状态。
+- 其他 HA 实体平台（AI、会话/语音服务、日历、通知、更新等）暂不作为同堂设备卡同步，详见 README。
+
 ## 2.4.10 · 2026-10-11
 
 ### 体验与稳定性
