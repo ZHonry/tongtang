@@ -3,6 +3,7 @@
 ## 2.4.11 · 2026-10-11
 
 ### HA 实体支持
+- 房间页面在标题旁增加齿轮入口，选择房间后进入首页设备布局编辑态；设备拖动松手立即保存，点击“完成”退出编辑。
 - 接入 `input_boolean`、`input_number`、`input_select`、`input_text`、`input_datetime` 辅助实体，分别提供开关、数值滑块、选项、文本和日期时间控件。
 - 接入 `remote` / `infrared` 遥控实体，支持遥控指令发送；接入 `assist_satellite` 状态与开始语音对话操作。
 - 接入 `air_quality`、`weather`、`device_tracker` 只读实体，显示空气质量、天气和在家/离家状态。
