@@ -67,6 +67,10 @@ HA 令牌只保存在服务端数据库中，前端与普通用户永远接触�
 
 ## 升级
 
+当前正式版本为 **2.4.20**。一体化、web、api与Matter侧车均提供同版本标签，支持linux/amd64与linux/arm64；HomeKit侧车复用API镜像。一体化部署给以下命令增加 `-f docker-compose.allinone.yml`，静态侧车随同一套compose更新。
+
+保留既有数据卷、APP_SECRET及网络/端口配置，升级前备份数据；请勿删除数据卷。可将compose中的镜像固定为 `:2.4.20`，避免后续latest变化。
+
 ```bash
 docker compose pull && docker compose up -d
 ```
