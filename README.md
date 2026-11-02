@@ -6,13 +6,13 @@
 **本仓库为发行仓库**：提供 Docker 镜像部署文件与完整文档，不包含源代码。
 本项目不开源，保留所有权利，详见 [LICENSE](LICENSE)。问题反馈与需求建议请提 [Issues](../../issues)。
 
-## 当前版本：2.4.49
+## 当前版本：2.4.50
 
-本次更新统一方块与紧凑卡片的宽度、圆角和间距，空调展开卡突出温度读数；首页与概览弹窗沿用相同卡片尺寸。普通弹窗、设备控制、传感器详情和个性化面板固定标题及关闭按钮，正文独立滚动。房间图标优先同步 Home Assistant 区域图标。
+本次更新优化能源实时读数：设备卡片已承载的电压、电流等读数从概览去重，独立读数集中到能源页；实时读数卡片优先显示物理设备名，副标题展示读数类型与房间，离线读数仍保留查看入口。首页能源继续显示当前功率与今日电量，点击直接进入能源页。
 
-详细变更与升级注意事项见 [更新日志](CHANGELOG.md#2449--2026-10-16)。
+详细变更与升级注意事项见 [更新日志](CHANGELOG.md#2450--2026-11-03)。
 
-发布镜像：`jeesa/tongtang:2.4.49`、`jeesa/tongtang-web:2.4.49`、`jeesa/tongtang-api:2.4.49`、`jeesa/tongtang-mt:2.4.49`，均支持 `linux/amd64` 和 `linux/arm64`。`latest` 与对应版本清单一致，已重新拉取验证；HomeKit 原生侧车复用 API 镜像。
+发布镜像：`jeesa/tongtang:2.4.50`、`jeesa/tongtang-web:2.4.50`、`jeesa/tongtang-api:2.4.50`、`jeesa/tongtang-mt:2.4.50`，均支持 `linux/amd64` 和 `linux/arm64`。`latest` 与对应版本清单一致，已重新拉取验证；HomeKit 原生侧车复用 API 镜像。
 
 已有部署保留数据卷及 APP_SECRET，使用原 compose 配置执行 `docker compose pull`、`docker compose up -d`；一体化部署为两条命令均加上 `-f docker-compose.allinone.yml`。静态侧车应一并更新，更新前建议备份数据卷。
 
@@ -78,6 +78,14 @@ docker compose up -d
 镜像仓库：[`jeesa/tongtang`](https://hub.docker.com/r/jeesa/tongtang)（一体化） · [`jeesa/tongtang-web`](https://hub.docker.com/r/jeesa/tongtang-web) + [`jeesa/tongtang-api`](https://hub.docker.com/r/jeesa/tongtang-api)（双容器）
 
 ## 界面预览
+
+### 2.4.50 能源实时读数
+
+实时读数卡片优先显示物理设备名，并在副标题标注读数类型与房间；设备自带读数仍从设备详情查看。
+
+| 桌面能源页 | 手机能源页 |
+|---|---|
+| ![2.4.50桌面能源页](screenshots/release-2450/energy-desktop.jpg) | ![2.4.50手机能源页](screenshots/release-2450/energy-mobile.jpg) |
 
 ### 2.4.20 界面
 
